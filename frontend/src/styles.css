@@ -1,0 +1,51 @@
+
+:root {
+  --dbe-primary: #0033a0;     /* Primary blue */
+  --dbe-secondary: #00a651;   /* Green */
+  --dbe-accent: #d4af37;      /* Gold */
+  --dbe-light: #f5f7fa;       /* Light background */
+  --dbe-dark: #2d3748;        /* Dark text */
+  --dbe-white: #ffffff;       /* White */
+  --dbe-gray: #e2e8f0;        /* Border color */
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: var(--dbe-light);
+  color: var(--dbe-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--dbe-secondary);
+  color: var(--dbe-white);
+}
+
+.btn-primary:hover {
+  background-color: #008a45;
+  transform: translateY(-2px);
+}
+

@@ -1,0 +1,86 @@
+.form-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--dbe-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 51, 160, 0.1);
+}
+
+.form-title {
+  color: var(--dbe-secondary);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--dbe-accent);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--dbe-gray);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--dbe-primary);
+  box-shadow: 0 0 0 2px rgba(0, 51, 160, 0.1);
+}
+
+.form-group input.invalid,
+.form-group select.invalid {
+  border-color: #e53e3e;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.success-message {
+  color: var(--dbe-secondary);
+  font-weight: 500;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 166, 81, 0.1);
+  border-radius: 4px;
+}
+
+.btn {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

@@ -1,0 +1,79 @@
+.header {
+  background-color: var(--dbe-secondary);
+  color: var(--dbe-white);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.brand h1 {
+  font-size: 1.3rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.tagline {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 10rem;
+  
+  
+}
+
+.nav a{
+  color: var(--dbe-white);
+  text-decoration: none;
+  font-weight: 500;
+  padding-left: 70px;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: var(--dbe-accent);
+   transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav a:hover {
+  color: var(--dbe-accent);
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 30%;
+}
+
+.nav a.active {
+  color: var(--dbe-accent, #ffcc00);
+  font-weight: 700;
+}
+.nav a.active::after {
+  display: none;
+}

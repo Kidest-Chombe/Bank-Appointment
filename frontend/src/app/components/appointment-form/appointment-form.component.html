@@ -1,0 +1,76 @@
+<div class="form-container">
+  <h2 class="form-title">Book an Appointment</h2>
+  
+  <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()" class="appointment-form">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input 
+        type="text" 
+        id="name" 
+        formControlName="name"
+        [class.invalid]="formControls['name'].invalid && formControls['name'].touched">
+      <div *ngIf="formControls['name'].invalid && formControls['name'].touched" class="error-message">
+        Please enter a valid name (min 3 characters)
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input 
+        type="email" 
+        id="email" 
+        formControlName="email"
+        [class.invalid]="formControls['email'].invalid && formControls['email'].touched">
+      <div *ngIf="formControls['email'].invalid && formControls['email'].touched" class="error-message">
+        Please enter a valid email address
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="serviceType">Service Type</label>
+      <select 
+        id="serviceType" 
+        formControlName="serviceType"
+        [class.invalid]="formControls['serviceType'].invalid && formControls['serviceType'].touched">
+        <option value="" disabled selected>Select a service</option>
+        <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+      </select>
+      <div *ngIf="formControls['serviceType'].invalid && formControls['serviceType'].touched" class="error-message">
+        Please select a service type
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="date">Appointment Date & Time</label>
+      <input 
+        type="datetime-local" 
+        id="date" 
+        formControlName="date"
+        [min]="minDate"
+        [class.invalid]="formControls['date'].invalid && formControls['date'].touched">
+      <div *ngIf="formControls['date'].invalid && formControls['date'].touched" class="error-message">
+        Please select a date and time
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Additional Message (Optional)</label>
+      <textarea id="message" formControlName="message" rows="3"></textarea>
+    </div>
+
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+    
+     <div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+
+    <button 
+      type="submit" 
+      class="btn btn-primary"
+      [disabled]="appointmentForm.invalid || isSubmitting">
+      {{ isSubmitting ? 'Booking...' : 'Book Appointment' }}
+    </button>
+  </form>
+</div>

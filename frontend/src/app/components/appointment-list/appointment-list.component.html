@@ -1,0 +1,51 @@
+<div class="card mt-4">
+  <div class="card-header bg-primary text-white">
+    <h5>Appointment List</h5>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Service</th>
+            <th>Date/Time</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appt of appointments">
+            <td>{{ appt.id }}</td>
+            <td>{{ appt.name }}</td>
+            <td>{{ appt.email }}</td>
+            <td>{{ appt.serviceType }}</td>
+            <td>{{ appt.date | date:'medium' }}</td>
+            <td>
+              <span [class]="'badge ' + getStatusClass(appt.status)">
+                {{ appt.status }}
+              </span>
+            </td>
+            <td>
+              <button (click)="cancelAppointment(appt.id)" 
+                      class="btn btn-sm btn-danger me-2"
+                      *ngIf="appt.status !== 'Cancelled'">
+                Cancel
+              </button>
+              <button (click)="confirmAppointment(appt.id)" 
+                      class="btn btn-sm btn-success"
+                      *ngIf="appt.status === 'Pending'">
+                Confirm
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div *ngIf="appointments?.length === 0">
+  No appointments found
+</div>

@@ -1,0 +1,71 @@
+
+.table-responsive {
+  max-height: 70vh;
+  overflow-y: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: white;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  background-color: var(--dbe-accent);
+  color: white;
+  z-index: 10;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background-color: #f5f9ff;
+}
+
+
+.badge {
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  border-radius: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.badge-confirmed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.badge-cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  font-style: italic;
+}
