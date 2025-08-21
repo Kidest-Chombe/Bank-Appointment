@@ -24,7 +24,7 @@ let appointments = [
     name: "Sample Customer",
     email: "sample@bank.com",
     serviceType: "Loan Consultation",
-    date: "2024-05-20T10:00",
+    date: "2025-07-20T10:00",
     status: "Confirmed"
   }
 ];
