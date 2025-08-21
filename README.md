@@ -36,8 +36,6 @@ The Bank Appointment System is a full-stack web application that allows users to
 
 \## Future Improvements
 
-\- Connect to backend API
-
 \- Add authentication
 
 \- Implement admin dashboard
